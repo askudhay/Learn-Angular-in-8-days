@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Static String
+  </h1>
+  {{ "Angular Basics !" }}
+  <h1>Property</h1>
+  {{myName }}
+  <h1>String concatenation with property</h1>
+  {{ "My name is " + myName }}
+  <h1>Expressions</h1>
+  {{ 1+10 }}
+  <h1>Method calls</h1>
+  {{ strIntpltn() }}
+
+  <h1>Property Binding</h1>
+  <div><input type="text" [value]="username1"/> </div> 
+  {{ "Username you just typed is " + username1  }}
+
+
+  <div><input type="text" [value]="username2" (input)= "handleInput($event)"/> </div> 
+  {{ "Username you just typed is " + username2  }}
+
+    <h1>Two way Binding using ngModel and ngModelChange</h1>
+    <div><input type="text" [ngModel]="username3"/> </div> 
+    {{ "Username you just typed is " + username3  }}
+    <div><input type="text" [ngModel]="username4" (ngModelChange)="handleNgInput($event)"/> </div> 
+    {{ "Username you just typed is " + username4  }}
+
+    <h1>Two way Binding using [(ngModel)]</h1>
+    <div><input type="text" [(ngModel)]="username5"/> </div> 
+    {{ "Username you just typed is " + username5  }}
+</div>
