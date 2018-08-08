@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Assignment';
   state: Boolean = false;
   bulbImg: String = 'assets/bulb_off.png';
@@ -13,4 +14,5 @@ export class AppComponent {
     this.state = currState;
     this.bulbImg = this.state ? 'assets/bulb_on.png' : 'assets/bulb_off.png';
   }
+
 }

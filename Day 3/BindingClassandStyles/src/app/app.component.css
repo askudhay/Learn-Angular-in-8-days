@@ -1,0 +1,17 @@
+.redBg{
+    background-color: red;
+    border: 1px solid white;
+    padding: 4px;
+    margin: 4px;
+}
+
+.greenBg{
+    background-color: green;
+    border: 1px solid white;
+    padding: 4px;
+    margin: 4px;
+}
+
+.cursor{
+    cursor: pointer;
+}
