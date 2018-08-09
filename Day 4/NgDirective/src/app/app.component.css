@@ -1,0 +1,16 @@
+.info{
+    padding: 4px;
+    border: 3px solid rgb(255, 153, 0);
+    background-color: orange;
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+table, td, tr, th{
+    border: 1px solid black;
+}
+
+tr.dist{
+    background-color: gold;
+}
