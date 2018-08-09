@@ -9,4 +9,8 @@
   <div [class] = "status ? 'redBg' : 'greenBg' ">
     Using ternary operator !
   </div>
+  <button (click)="enableWarningStyle()">{{ btnText }}</button>
+  <div [style.color] = "isWarning ? 'Yellow' : 'black' ">
+   Binding !
+  </div>
 </div>
