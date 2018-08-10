@@ -1,0 +1,23 @@
+<table>
+  <tr>
+      <th>S.No</th>
+      <th>Student ID</th>
+      <th>Student Name</th>
+      <th>Student Destinction</th>
+      <th>Teacher Comments</th>
+    </tr>
+    <tr>
+      <td>{{ i+1 }}</td>
+      <td>{{ student.studId }}</td>
+      <td>{{ student.studName }}</td>
+      <td >{{ student.studDestinction ? "Yes" : "No" }}</td> 
+      <td>
+        <div [ngSwitch]= student.studGrade>
+          <div  *ngSwitchCase="'A'"> Excellent performance ! </div>
+          <div  *ngSwitchCase="'B'">Keep it up !</div>
+          <div  *ngSwitchCase="'C'">Need improvement !</div>
+          <div *ngSwitchDefault>Meet me !</div>
+        </div>
+      </td>
+    </tr>
+</table>

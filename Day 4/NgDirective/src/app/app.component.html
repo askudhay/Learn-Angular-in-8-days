@@ -52,12 +52,23 @@
         <th>Student ID</th>
         <th>Student Name</th>
         <th>Student Destinction</th>
+        <th>Teacher Comments</th>
       </tr>
       <tr *ngFor="let stud of studentsArr, let i = index" [ngClass]=" { 'dist' : stud.studDestinction } ">
         <td>{{ i+1 }}</td>
         <td>{{ stud.studId }}</td>
         <td>{{ stud.studName }}</td>
         <td >{{ stud.studDestinction ? "Yes" : "No" }}</td> 
+        <td>
+          <div [ngSwitch]= stud.studGrade>
+            <div  *ngSwitchCase="'A'"> Excellent performance ! </div>
+            <div  *ngSwitchCase="'B'">Keep it up !</div>
+            <div  *ngSwitchCase="'C'">Need improvement !</div>
+            <div *ngSwitchDefault>Meet me !</div>
+          </div>
+        </td>
       </tr>
 </table>
+<hr/>
+
 </div>

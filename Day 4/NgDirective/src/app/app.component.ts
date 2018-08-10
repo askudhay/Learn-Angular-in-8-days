@@ -14,12 +14,12 @@ export class AppComponent {
     'sId': 567, 'sName': 'John', 'sDistinction' : true
   }, {'sId': 789, 'sName': 'Kelvis', 'sDistinction' : false}];
 
-  studentsArr: Array<Student> = [new Student(123, 'Udhay', true),
-            new Student(234, 'Kumar', false)];
+  studentsArr: Array<Student> = [new Student(123, 'Udhay', true, 'A'),
+            new Student(234, 'Kumar', false, 'C')];
 
   addStudent() {
-    const sObj = new Student(44, 'Dan', true);
-    this.studentsArr.push(new Student(1, 'Vinod', false));
+    const sObj = new Student(44, 'Dan', true, 'A');
+    this.studentsArr.push(new Student(1, 'Vinod', false, 'D'));
     this.studentsArr.push(sObj);
   }
 }

@@ -1,0 +1,7 @@
+table, td, tr, th{
+    border: 1px solid black;
+}
+
+tr.dist{
+    background-color: gold;
+}
