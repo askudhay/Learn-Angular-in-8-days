@@ -1,0 +1,84 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main" class="container">
+  <div class="starter-template">
+    <form class="form-signin">
+      <img class="mb-4  " src="http://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Student App</h1>
+      <label for="studid" class="sr-only">Student ID</label>
+      <input name="sID" type="text" id="studid" class="form-control" placeholder="Student ID" required autofocus [(ngModel)]="model.studID"
+        #trackClass=ngModel>
+      <p class="alert alert-danger" [hidden]="trackClass.valid || trackClass.pristine">Student ID is must</p>
+      <label for="studname" class="sr-only">Password</label>
+      <input name="sName" type="text" id="studname" class="form-control" placeholder="Studen Name" required [(ngModel)]="model.studName">
+      <label for="sDest" class="sr-only">Password</label>
+      <input name="sDest" type="text" id="sDest" class="form-control" placeholder="Studen Destinction" required [(ngModel)]="model.studDestinction">
+      <label for="sGrade" class="sr-only">Password</label>
+      <input name="sGrade" type="text" id="sGrade" class="form-control" placeholder="Studen Name" required [(ngModel)]="model.studGrade">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+    <h4>Diagnostics</h4>
+    <p>{{ model | json }}
+    </p>  
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Destinction</th>
+            <th>Teacher Comments</th>
+          </tr>
+          <tr *ngFor="let stud of studentsArr, let i = index" [ngClass]=" { 'dist' : stud.studDestinction } ">
+            <td>{{ i+1 }}</td>
+            <td>{{ stud.studId }}</td>
+            <td>{{ stud.studName }}</td>
+            <td >{{ stud.studDestinction ? "Yes" : "No" }}</td> 
+            <td>
+              <div [ngSwitch]= stud.studGrade>
+                <div  *ngSwitchCase="'A'"> Excellent performance ! </div>
+                <div  *ngSwitchCase="'B'">Keep it up !</div>
+                <div  *ngSwitchCase="'C'">Need improvement !</div>
+                <div *ngSwitchDefault>Meet me !</div>
+              </div>
+            </td>
+          </tr>
+    </table>
+  </div>
+</main>

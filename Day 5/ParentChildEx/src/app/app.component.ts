@@ -7,7 +7,11 @@ import { Student } from './student';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ParentChildEx';
+  title: String = 'ParentChildEx';
   studentsArr: Array<Student> = [new Student(123, 'Udhay', true, 'A'),
-            new Student(234, 'Kumar', false, 'C')];
+  new Student(234, 'Kumar', false, 'C')];
+
+  onReturn(str: String) {
+    this.title = str;
+  }
 }
