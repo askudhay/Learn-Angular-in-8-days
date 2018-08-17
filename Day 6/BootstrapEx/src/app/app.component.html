@@ -38,11 +38,12 @@
 
 <main role="main" class="container">
   <div class="starter-template">
-    <form class="form-signin">
+    <div *ngIf="!formSubmitted">
+    <form class="form-signin" #studForm = "ngForm" (ngSubmit)="onSubmit()">
       <img class="mb-4  " src="http://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Student App</h1>
       <label for="studid" class="sr-only">Student ID</label>
-      <input name="sID" type="text" id="studid" class="form-control" placeholder="Student ID" required autofocus [(ngModel)]="model.studID"
+      <input name="sID" type="text" id="studid" class="form-control" placeholder="Student ID" required autofocus [(ngModel)]="model.studId"
         #trackClass=ngModel>
       <p class="alert alert-danger" [hidden]="trackClass.valid || trackClass.pristine">Student ID is must</p>
       <label for="studname" class="sr-only">Password</label>
@@ -51,9 +52,13 @@
       <input name="sDest" type="text" id="sDest" class="form-control" placeholder="Studen Destinction" required [(ngModel)]="model.studDestinction">
       <label for="sGrade" class="sr-only">Password</label>
       <input name="sGrade" type="text" id="sGrade" class="form-control" placeholder="Studen Name" required [(ngModel)]="model.studGrade">
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!studForm.form.valid">Submit</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>
+  </div>
+  <div *ngIf="formSubmitted">
+    <button  class="btn btn-lg btn-primary btn-block" type="submit" (click)="formSubmitted = false">Wanna submit again?</button>
+  </div>
     <h4>Diagnostics</h4>
     <p>{{ model | json }}
     </p>  

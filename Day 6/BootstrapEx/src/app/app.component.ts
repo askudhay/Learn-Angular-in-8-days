@@ -7,10 +7,15 @@ import { Student} from './Student';
 })
 export class AppComponent {
   title = 'BootstrapEx';
-  model = {'studID' : 190, 'studName' : 'Udhay', 'studDestinction': true, 'studGrade': 'A'};
-  studentsArr: Array<Student>;
-  addStudent() {
-    const sObj = new Student(44, 'Dan', true, 'A');
+  model = {'studId' : 190, 'studName' : 'Udhay', 'studDestinction': true, 'studGrade': 'A'};
+  formSubmitted = false;
+  studentsArr: Array<Student> = Array<Student>();
+  onSubmit() {
+    const sObj = new Student(this.model.studId, this.model.studName, this.model.studDestinction, this.model.studGrade);
     this.studentsArr.push(sObj);
+    this.formSubmitted = true;
+  }
+  submiAgain(){
+    this.formSubmitted = false;
   }
 }
