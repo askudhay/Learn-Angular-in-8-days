@@ -6,11 +6,14 @@
   <div [class]="bgClass">
     This is a sample paragraph with red bgcolor class !
   </div>
-  <div [class] = "status ? 'redBg' : 'greenBg' ">
+  <div [class]="status ? 'redBg' : 'greenBg' ">
     Using ternary operator !
   </div>
   <button (click)="enableWarningStyle()">{{ btnText }}</button>
-  <div [style.color] = "isWarning ? 'Yellow' : 'black' ">
-   Binding !
+  <div [style.color]="isWarning ? 'Yellow' : 'black' ">
+    Binding !
+  </div>
+  <div [style.color]="'orange'">
+    Font color is going to be red..
   </div>
 </div>
